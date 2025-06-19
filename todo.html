@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head lang="tr">
+    <meta charset="UTF-8">
+    <title>TODO-List</title>
+    <style>
+      .baslik{
+        color:blue;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-left: 20px;
+        margin-top:20px;
+      }
+      .gorev{
+        margin-top: 10px;
+        margin-left:20px;
+        height:35px;
+        border-radius: 17px;
+        background-color: rgba(203, 201, 201, 0.633);
+        width: 220px;
+        border:none;
+        
+      }
+      .button{
+        margin-top: 10px;
+        width: 70px;
+        height:35px;
+        border-radius: 17px;
+        background-color:coral;
+        border: none;
+      }
+      .button:hover{
+        cursor: pointer;
+      }
+      .liste{
+        margin-top:20px;
+        margin-left: 20px;
+      }
+      .txt1{
+        height: 30px;
+        width:220px;
+        border-radius: 15px;
+        background-color: rgba(144, 209, 209, 0.442);
+        border:none;
+      }
+      .ck1{
+        width:20px;
+      }
+      .ozel-div{
+        margin-top: 10px;
+      }
+      
+      
+    </style>
+
+    <script>
+      function tiklama()
+      {
+        var checkbox=document.createElement("input");
+        checkbox.type="checkbox";
+        checkbox.className="ck1";
+
+
+        var icerik=document.getElementById("grv1").value;
+        if(icerik=="")
+      {
+        alert("Please add task!!");
+      }
+      else{
+
+        var text=document.createElement("input");
+        text.type="text";
+        text.className="txt1";
+        text.value=icerik;//text old ıcın value dedık
+
+        
+        
+        document.getElementById("grv1").value="";
+
+
+
+        var div=document.createElement("div");
+        div.append(checkbox,text);
+        div.className="ozel-div";
+        document.getElementById("liste").appendChild(div);
+
+
+       
+      }
+      }
+       
+    </script>
+
+  </head>
+  <body>
+      <h2 class="baslik">To-Do List &#128214;</h2>
+      <input  type="text" class="gorev" id="grv1" placeholder="   Add your task" >
+      <button  type="button" onclick="tiklama()"  class="button">ADD</button>
+      <div class="liste" id="liste" ></div>
+  </body>
+</html>
